@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Teacher Student Connect</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link th:rel="stylesheet" th:href="@{css/custom.css}" />
+</head>
+<body>
+
+	<nav id="nav_bar" class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img th:src="@{image/teacher.png}" alt="Logo" style="width:40px;"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				
+				<ul class="nav navbar-nav">
+					<li><a href="#">&nbsp;</a></li>
+					<li><a href="#">&nbsp;</a></li>
+					<li><a href="#">&nbsp;</a></li>
+					<li><a href="#">&nbsp;</a></li>
+				</ul>
+				
+				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assessor Portal</h3>						
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid text-center">
+
+		<div class="row content">
+			<div class="col-sm-2 sidenav">
+				
+			</div>
+			<div class="col-sm-8">
+				<div class="container">
+					
+						<br><br><br><br><br><br><br><br><br><br><br><br>
+						
+						
+						<form class="form-signin" method="POST" th:action="@{/login}" th:object="${user}">
+						<div th:if="${#fields.hasAnyErrors()}">
+						    <ul>
+						        <li class="error" th:each="err : ${#fields.allErrors()}" th:text="${err}" />
+						    </ul>
+						</div>
+						<div class="form-group row">
+							<label for="username" class="col-sm-2 col-form-label">Username:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="username" placeholder="username" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="password" class="col-sm-2 col-form-label">Password: </label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" name="password" placeholder="password" required>
+							</div>
+						</div>
+
+						<button type="submit" class="btn btn-primary mb-2">Submit</button>
+						</form>
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="container-fluid text-center">
+		<p>Footer Text</p>
+	</footer>
+
+</body>
+</html>
